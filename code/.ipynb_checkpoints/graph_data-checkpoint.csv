@@ -1,0 +1,8 @@
+source,target,weight
+n1,n2,3
+n2,n4,-6
+n3,n0,-3
+n0,n3,8
+n3,n2,9
+n4,n0,10
+n4,n3,-10
