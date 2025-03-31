@@ -1,7 +1,8 @@
 import random
 import csv
+import argparse
 
-def generate_graph(num_nodes, num_edges, filename="graph_data.csv"):
+def generate_graph(num_nodes, num_edges, filename="graph_data.csv", weight_range = 10):
     nodes = [f'n{i}' for i in range(num_nodes)]
     edges = []
     
@@ -24,7 +25,11 @@ def generate_graph(num_nodes, num_edges, filename="graph_data.csv"):
     return filename, destination_node
 
 if __name__ == "__main__":
-    num_nodes = 100
-    num_edges = 300
-    generate_graph(num_nodes, num_edges)
-
+    parser = argparse.ArgumentParser(description='Generate a random graph with specified parameters')
+    parser.add_argument('--nodes', type=int, default=20, help='Number of nodes in the graph (default: 20)')
+    parser.add_argument('--edges', type=int, default=100, help='Number of edges in the graph (default: 100)')
+    parser.add_argument('--range', type=int, default=10, help='Range of edge weights from -N to +N (default: 10)')
+    
+    args = parser.parse_args()
+    
+    generate_graph(args.nodes, args.edges, weight_range=args.range)
