@@ -24,7 +24,7 @@ def generate_graph(num_nodes, num_edges, filename="graph_data.csv"):
     return filename, destination_node
 
 if __name__ == "__main__":
-    num_nodes = 50
-    num_edges = 400
+    num_nodes = 20
+    num_edges = 100
     generate_graph(num_nodes, num_edges)
 
